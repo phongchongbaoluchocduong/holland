@@ -1,0 +1,429 @@
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #444;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Header Styling */
+header {
+  text-align: center;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1em;
+  opacity: 0.9;
+}
+
+/* Opening Screen */
+#openingScreen {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 90%;
+}
+
+/* Stylish "Bắt đầu" Button */
+#startButton {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#startButton:hover {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+#startButton:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Quiz Section */
+.container {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#quizSection h3 {
+  color: #2575fc;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+#quizSection p {
+  font-size: 1.2em;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.options-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.options-list li {
+  margin: 10px auto;
+}
+
+button.option {
+  width: 80%;
+  padding: 12px;
+  font-size: 1em;
+  color: white;
+  background-color: #6a11cb;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button.option:hover {
+  background-color: #2575fc;
+}
+
+/* Highlight selected option */
+button.option.selected {
+  background-color: #ff8c00;
+  color: white;
+  font-weight: bold;
+}
+
+/* Navigation Buttons */
+.navigation-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: white;
+  background-color: #6a11cb;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.nav-button:hover:enabled {
+  background-color: #2575fc;
+}
+
+.nav-button:disabled {
+  cursor: not-allowed;
+  background-color: #cccccc;
+  opacity: 0.5;
+}
+
+/* Transition Screen Button */
+.start-part-button {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.start-part-button:hover {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.start-part-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Progress Bar Styling */
+#progressContainer {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  margin: 20px auto;
+  overflow: hidden;
+  height: 10px;
+}
+
+#progressBar {
+  width: 0;
+  height: 100%;
+  background-color: #6a11cb;
+  transition: width 0.4s ease;
+}
+
+/* Result Section */
+#result {
+  font-size: 1.3em;
+  color: #6a11cb;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#resultText {
+  margin-top: 10px;
+  font-size: 1.1em;
+  color: #444;
+}
+
+/* Retake Button */
+#retakeButton {
+  visibility: hidden;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 1em;
+  color: white;
+  background-color: #6a11cb;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#retakeButton:hover {
+  background-color: #2575fc;
+}
+
+/* Footer Styling */
+footer {
+  margin-top: 20px;
+  padding: 10px;
+  color: #777;
+  font-size: 0.9em;
+}
+
+/* Front Question Section */
+#frontQuestion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    width: 90%;
+}
+
+#frontQuestion h2 {
+    font-size: 1.5em;
+    color: #2575fc;
+}
+
+#careerOptions {
+    list-style: none;
+    padding: 0;
+}
+
+.career-option {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1em;
+    color: white;
+    background-color: #ffad46; /* Vibrant orange background for buttons */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.career-option:hover {
+    background-color: #ff8700; /* Darker orange on hover */
+}
+
+/* Result Section Styling */
+#result {
+    color: #4c8eff; /* Vibrant blue for the results text */
+}
+
+/* Navigation Buttons */
+.nav-button {
+    background-color: #76c7c0; /* Teal color for buttons */
+}
+
+.nav-button:hover:enabled {
+    background-color: #39a6a3; /* Darker teal on hover */
+}
+
+.details-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.details-container h2 {
+    color: #2575fc;
+}
+
+.details-container p {
+    margin: 10px 0;
+    color: #444;
+}
+
+
+/* Settings Button */
+.settings-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #6a11cb;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.settings-button:hover {
+    background-color: #2575fc;
+}
+
+/* Settings Menu */
+.settings-menu {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 250px; /* Increased width for music player */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.settings-menu.hidden {
+    display: none;
+}
+
+.settings-menu label {
+    font-size: 14px;
+    color: #333;
+}
+
+.settings-menu select,
+.settings-menu button {
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.settings-menu button {
+    background-color: #6a11cb;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.settings-menu button:hover {
+    background-color: #2575fc;
+}
+
+#musicPlayer {
+    margin-top: 10px;
+}
+
+#musicPlayer label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#musicPlayer select, #musicPlayer input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#customAudioControls {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#customAudioControls button {
+    background-color: #6a11cb;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#customAudioControls button:hover {
+    background-color: #2575fc;
+}
+
+#customAudioControls #volumeControl {
+    width: 100px; /* Adjust width as needed */
+    margin-left: auto; /* Push to the right */
+}

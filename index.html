@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trắc nghiệm nghề nghiệp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Trắc nghiệm nghề nghiệp</h1>
+        <p>Tìm hiểu phần nào phù hợp với bạn nhất!</p>
+    </header>
+
+    <!-- Front Question -->
+    <div id="frontQuestion" class="container">
+        <h2>Bạn nghĩ rằng mình sẽ phù hợp với nhóm nghề gì?</h2>
+        <ul id="careerOptions">
+            <li><button class="career-option" data-group="Kỹ thuật">Nhóm R – Kỹ thuật: Kỹ sư, thợ điện, thợ máy, đầu bếp…</button></li>
+            <li><button class="career-option" data-group="Nghiên cứu">Nhóm I – Nghiên cứu: Nhà toán học, nhà hóa học, dược sĩ,…</button></li>
+            <li><button class="career-option" data-group="Nghệ thuật">Nhóm A – Nghệ thuật: Diễn viên, phóng viên, kiến trúc sư,…</button></li>
+            <li><button class="career-option" data-group="Xã hội">Nhóm S – Xã hội: Nhà hoạt động xã hội, nhà trị liệu, tư vấn,…</button></li>
+            <li><button class="career-option" data-group="Quản lý">Nhóm E – Quản lý: Giám đốc, nhân viên bán hàng, chủ doanh nghiệp,…</button></li>
+            <li><button class="career-option" data-group="Nghiệp vụ">Nhóm C – Nghiệp vụ: Kế toán, giáo viên, nhân viên ngân hàng,…</button></li>
+        </ul>
+    </div>
+
+    <!-- Opening Screen -->
+    <div id="openingScreen" class="container" style="display: none;">
+        <h2>Thực hiện trắc nghiệm để định hướng nghề theo công cụ Holand!</h2>
+        <p><strong>TRƯỚC khi thực hiện, các bạn hãy:</strong></p>
+        <p>Hít thở thật sâu 2-3 lần.</p>
+        <p>Hoàn thành chỉ tối đa trong 20 phút.</p>
+        <p><strong>TRONG khi thực hiện, người thực hiện cần:</strong></p>
+        <p>Chọn câu trả lời đến với mình nhanh và tự nhiên nhất.</p>
+        <p>Lựa chọn mức độ đồng ý của mình cho mỗi câu ở các phần tiếp theo bằng cách chọn vào ô tương ứng:</p>
+        <p>Rất không thích</p>
+        <p>Không thích</p>
+        <p>Bình thường</p>
+        <p>Thích</p>
+        <p>Rất thích</p>
+        <button id="startButton">Bắt đầu</button>
+    </div>
+
+    <!-- Quiz Section -->
+    <div id="quizSection" class="container" style="display: none;">
+        <div id="quizContainer"></div>
+    </div>
+
+    <!-- Result Section -->
+    <div id="result" class="container" style="display: none;">
+        <p id="resultText"></p>
+    </div>
+
+
+    <!-- Settings Button -->
+    <div id="settingsButton" class="settings-button" onclick="toggleSettingsMenu()">
+        ⚙️
+    </div>
+
+    <!-- Settings Menu -->
+    <div id="settingsMenu" class="settings-menu hidden">
+        <label for="fontStyle">Font Style:</label>
+        <select id="fontStyle" onchange="changeFontStyle(event)">
+            <option value="Arial">Arial</option>
+            <option value="Times New Roman">Times New Roman</option>
+        </select>
+
+        <label for="themeMode">Theme:</label>
+        <select id="themeMode" onchange="toggleThemeMode(event)">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+        </select>
+
+        <div id="musicPlayer">
+            <label for="musicSelect">Choose Music:</label>
+            <select id="musicSelect" onchange="selectMusic()">
+                <option value="Đi Giữa Trời Rực Rỡ Lyrics.mp3">Đi Giữa Trời Rực Rỡ </option>
+                <option value="Một Ngày Chẳng Nắng.mp3">Một Ngày Chẳng Nắng</option>
+            </select>
+            <audio id="audioPlayer"></audio>  <!--removed controls-->
+            <div id="customAudioControls"> </div>
+            <button onclick="retakeQuiz()">Retake Quiz</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
